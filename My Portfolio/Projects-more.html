@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="assests/css/projects.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+</head>
+<body>
+    <div class="project-details">
+        <h1 id="project-title"></h1>
+        <img id="project-image" src="" alt="Project Image">
+        <p id="project-description"></p>
+        <div class="social-links">
+            <a id="linkedin-link" href="" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+            <a id="github-link" href="" target="_blank"><i class="uil uil-github-alt"></i></a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const title = urlParams.get('title');
+            const image = urlParams.get('image');
+            const description = urlParams.get('description');
+            const linkedin = urlParams.get('linkedin');
+            const github = urlParams.get('github');
+
+            document.getElementById('project-title').textContent = title;
+            document.getElementById('project-image').src = image;
+            document.getElementById('project-description').textContent = description;
+            document.getElementById('linkedin-link').href = linkedin;
+            document.getElementById('github-link').href = github;
+        });
+    </script>
+</body>
+</html>
